@@ -10,7 +10,6 @@ import com.wc.yff.view.RangleView;
 
 public class MainActivity extends Activity {
 
-    protected int TILE_HEIGHT = 200;
     LinearLayout linearLayout;
     RangleView rangleView;
     private int[] colorMy;
@@ -24,17 +23,13 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
 
-        colorMy = new int[]{
+        colorMy= new int[]{
                 getResources().getColor(R.color.green),
                 getResources().getColor(R.color.blue),
-                getResources().getColor(R.color.orange)
+                getResources().getColor( R.color.orange)
         };
         linearLayout = (LinearLayout) findViewById(R.id.linear);
-        rangleView = new RangleView(this);
-        rangleView.setNum(3);
-        rangleView.setColorsMy(colorMy);
-        rangleView.setValues(new int[]{15, 45, 40});
-        linearLayout.addView(rangleView);
+
 
 
     }
@@ -43,10 +38,15 @@ public class MainActivity extends Activity {
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
 
-        float right = linearLayout.getWidth();
-        float bottommy = linearLayout.getHeight();
-        RectF rectF = new RectF(0, 0, right, bottommy);
+        float right=linearLayout.getWidth();
+        float bottommy=linearLayout.getHeight();
+        RectF rectF=new RectF(0,0,right,bottommy);
+        rangleView = new RangleView(this);
         rangleView.setRect(rectF);
+        rangleView.setNum(3);
+        rangleView.setColorsMy(colorMy);
+        rangleView.setValues(new int[]{15, 45, 40});
+        linearLayout.addView(rangleView);
 
     }
 }
