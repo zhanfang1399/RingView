@@ -19,9 +19,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
 
 
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-
 
         colorMy= new int[]{
                 getResources().getColor(R.color.green),
@@ -30,8 +28,6 @@ public class MainActivity extends Activity {
         };
         linearLayout = (LinearLayout) findViewById(R.id.linear);
 
-
-
     }
 
     @Override
@@ -39,8 +35,8 @@ public class MainActivity extends Activity {
         super.onWindowFocusChanged(hasFocus);
 
         float right=linearLayout.getWidth();
-        float bottommy=linearLayout.getHeight();
-        RectF rectF=new RectF(0,0,right,bottommy);
+        float bottomMy=linearLayout.getHeight();
+        RectF rectF=new RectF(0,0,right,bottomMy);
         rangleView = new RangleView(this);
         rangleView.setRect(rectF);
         rangleView.setNum(3);
